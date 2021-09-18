@@ -16,14 +16,9 @@ namespace SourceGenerator.Generator
 	    {
 		    public List<InterfaceDeclarationSyntax> DecoratorRequestingInterfaces { get; } =
 			    new List<InterfaceDeclarationSyntax>();
-
-		    public List<SyntaxNode> SyntaxNodes { get; } 
-			    = new List<SyntaxNode>();
 			
 			public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
 			{
-				SyntaxNodes.Add(syntaxNode);
-
 				// Get all interfaces with any attributes
 				if (!(syntaxNode is InterfaceDeclarationSyntax ids))
 			    {
