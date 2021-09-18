@@ -20,12 +20,7 @@ namespace SourceGenerator.Generator
 			public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
 			{
 				// Get all interfaces with any attributes
-				if (!(syntaxNode is InterfaceDeclarationSyntax ids))
-			    {
-				    return;
-			    }
-
-			    if (!ids.AttributeLists.Any())
+				if (!(syntaxNode is InterfaceDeclarationSyntax ids) || !ids.AttributeLists.Any())
 			    {
 				    return;
 			    }
