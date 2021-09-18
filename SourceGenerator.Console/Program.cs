@@ -23,7 +23,7 @@ namespace SourceGenerator.Console
 			duck.MakeNoise("additional noise");
 
 			System.Console.WriteLine("Custom duck:");
-			var customDuck = new CustomDuck.Namespace.CustomDuck();
+			var customDuck = new CustomDuck();
 			customDuck.MakeNoise();
 			customDuck.MakeNoise("Additional noise");
 

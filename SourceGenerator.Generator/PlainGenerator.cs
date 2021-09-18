@@ -19,11 +19,10 @@ namespace SourceGenerator.Generator
 			var sb = new StringBuilder();
 
 			sb.Append(@$"
-using {$"{callingEntrypoint!.ContainingNamespace.ContainingNamespace.Name}.{callingEntrypoint!.ContainingNamespace.Name}"};
-using SourceGenerator.Console.Interfaces;
+	using SourceGenerator.Console.Interfaces;
 
-namespace CustomDuck.Namespace
-{{
+	namespace {$"{callingEntrypoint!.ContainingNamespace.ContainingNamespace.Name}.{callingEntrypoint!.ContainingNamespace.Name}"}
+	{{
 	public class CustomDuck : IAnimal
 	{{
 		public void MakeNoise()
@@ -36,7 +35,7 @@ namespace CustomDuck.Namespace
 			System.Console.WriteLine($""Hello from custom duck with noise: {{withNoise}}"");
 		}}
 	}}
-}}
+	}}
 			");
 
 			context.AddSource("CustomDuck", SourceText.From(sb.ToString(), Encoding.UTF8));
